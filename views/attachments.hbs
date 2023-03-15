@@ -1,0 +1,39 @@
+<div>
+  <a href='/projects/{{projectId}}/add-attachment/' class='btn btn-info btn-lg mb-5'>Add attachment</a>
+</div>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+  {{#each attachment}}
+  <div>
+    <a href="/{{attachment}}">
+      <div class='col'>
+        <div class='card shadow-sm'>
+          <div class='card-body'>
+            <p class='card-text fw-bold'> {{attachment}} </p>
+            <div class='d-flex justify-content-between align-items-center'>
+              <p class='p-0 m-0'> {{formatDate createdAt}} </p>
+            </div>
+          </div>
+          <div class='card-footer d-flex justify-content-between'>
+            <div class='btn-group btn-group-sm' role='group' aria-label='Basic example'>
+              {{#if @root.token}}
+                {{#if isAdmin }}
+                  {{!-- {{#ifequal ../userId user }} --}}
+                    {{!-- <a type='button' class='btn btn-outline-secondary' href='/projects/{{../projectId}}/attachments/edit-attachment/{{_id}}'>Edit</a> --}}
+                    <form action='/projects/{{../projectId}}/attachments/delete-attachment/{{_id}}' method='post' class='m-0 btn btn-outline-danger'>
+                      <button type='submit' class='delete-btn'>Delete</button>
+                    </form>
+
+                  {{!-- {{/ifequal}} --}}
+                {{/if}}
+              {{/if}}
+            </div>
+            <div onclick="event.stopPropagation();">
+              <a href="/download/{{_id}}" class="btn btn-success">Download File</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {{/each}}
+</div>

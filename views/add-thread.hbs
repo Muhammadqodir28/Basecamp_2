@@ -1,0 +1,21 @@
+<div class='row'>
+	<div class='col-md-6'>
+		<div class='w-75 mx-auto'>
+			<p class='fs-1'>Add Thread</p>
+			{{#if errorAddThread}}
+			<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+				<strong>Error!</strong>
+				{{errorAddThread}}
+				<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+			</div>
+			{{/if}}
+			<form action='/projects/{{projectId}}/add-thread' method='post'>
+				<div class='form-floating mb-3'>
+					<input type='text' class='form-control' name='title' id='floatingInput' placeholder='Thread'>
+					<label for='floatingInput'>Title</label>
+				</div>
+				<button type='submit' class='btn btn-dark mt-3'>Add thread</button>
+			</form>
+		</div>
+	</div>
+</div>

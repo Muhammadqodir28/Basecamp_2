@@ -1,0 +1,17 @@
+<p class='fs-1 m-0'> {{project.title}} </p>
+<div class='d-flex gap-3 align-items-center'>
+  <small class='text-muted'>Created at: <b> {{formatDate project.createdAt}} </b></small>
+</div>
+<p class='mt-3'> {{project.description}} </p>
+
+<button type='button' class='btn btn-warning active'>
+  <a class='text-light text-decoration-none' href='/projects/{{id}}/messages/'>Messages</a>
+</button>
+
+<button type='button' class='btn btn-info active'>
+  <a class='text-light text-decoration-none' href='/projects/{{id}}/attachments/'>Attachments</a>
+</button>
+
+<button type='button' class='btn btn-dark active'>
+  <a class='text-light text-decoration-none' href='/projects/{{id}}/threads/'>Threads</a>
+</button>

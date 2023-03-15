@@ -1,0 +1,17 @@
+<div class='w-75 mx-auto'>
+  <p class='fs-1'>Edit Thread</p>
+  {{#if errorEditThread}}
+    <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+      <strong>Error!</strong>
+      {{errorEditThread}}
+      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+  {{/if}}
+  <form action='/projects/{{projectId}}/threads/edit-thread/{{thread._id}}' method='post'>
+    <div class='form-floating mb-3'>
+      <input type='text' value='{{thread.title}}' class='form-control' name='title' id='floatingInput' placeholder='Thread'>
+      <label for='floatingInput'>Title</label>
+    </div>
+    <button type='submit' class='btn btn-warning mt-3'>Edit thread</button>
+  </form>
+</div>

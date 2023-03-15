@@ -1,0 +1,31 @@
+<div>
+  <a href='/projects/{{projectId}}/add-message/' class='btn btn-warning btn-lg mb-5'>Add message</a>
+</div>
+<div class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+  {{#each messages}}
+  <div class='col'>
+    <div class='card shadow-sm'>
+      <div class='card-body'>
+        <p class='card-text fw-bold'> {{title}} </p>
+        <p class='card-text'> {{description}} </p>
+        <div class='d-flex justify-content-between align-items-center'>
+          <p class='p-0 m-0'> {{formatDate createdAt}} </p>
+        </div>
+      </div>
+      <div class='card-footer'>
+        <div class='btn-group btn-group-sm' role='group' aria-label='Basic example'>
+          {{#if @root.token}}
+            {{#if isAdmin}}
+              <a type='button' class='btn btn-outline-secondary' href='/projects/{{../projectId}}/messages/edit-message/{{_id}}'>Edit</a>
+              <form action='/projects/{{../projectId}}/messages/delete-message/{{_id}}' method='post' class='m-0 btn btn-outline-danger'>
+                <button type='submit' class='delete-btn'>Delete</button>
+              </form>
+            {{/if}}
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+

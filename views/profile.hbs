@@ -1,0 +1,21 @@
+{{!-- <div> {{!--class='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'--}}
+  <h1>Your Profile</h1>
+  <div class='d-flex gap-2 flex-row-reverse align-items-center'> {{!-- d-flex gap-2 align-items-center --}}
+    <div class='avatar bg-primary'>
+      <p> {{getFullNameFirstCharacter myProfile.firstName myProfile.lastName}} </p>
+    </div>
+    <p class='p-0 m-0'> {{myProfile.firstName}} {{myProfile.lastName}} </p>
+  </div>
+</div>
+<div class='card-footer'>
+  <div class='btn-group btn-group-sm' role='group' aria-label='Basic example'>
+    {{#if @root.token}}
+      {{#ifequal user @root.userId}}
+        <a type='button' class='btn btn-outline-secondary' href='/edit-profile/{{_id}}'>Edit Profile</a>
+        <form action='/delete-profile/{{_id}}' method='post' class='m-0 btn btn-outline-danger'>
+          <button type='submit' class='delete-btn'>Delete Profile</button>
+        </form>
+      {{/ifequal}}
+    {{/if}}
+  </div>
+</div> --}}

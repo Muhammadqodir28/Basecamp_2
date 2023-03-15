@@ -1,0 +1,23 @@
+<div class='w-75 mx-auto'>
+  <p class='fs-1'>Edit Message</p>
+  {{#if errorEditMessage}}
+    <div class='alert alert-danger alert-dismissible fade show' role='alert'>
+      <strong>Error!</strong>
+      {{errorEditMessage}}
+      <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+  {{/if}}
+  <form action='/projects/{{projectId}}/messages/edit-message/{{message._id}}' method='post'>
+    <div class='form-floating mb-3'>
+      <input type='text' value='{{message.title}}' class='form-control' name='title' id='floatingInput' placeholder='Name'>
+      <label for='floatingInput'>Your Name</label>
+    </div>
+    <div class='form-floating mb-3'>
+      <textarea class='form-control' placeholder='Description' name='description' id='floatingTextarea2' style='height: 200px'>
+        {{message.description}}
+      </textarea>
+      <label for='floatingTextarea2'>Description</label>
+    </div>
+    <button type='submit' class='btn btn-warning mt-3'>Edit message</button>
+  </form>
+</div>

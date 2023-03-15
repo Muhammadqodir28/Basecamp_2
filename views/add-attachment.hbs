@@ -1,0 +1,21 @@
+<div class='row'>
+	<div class='col-md-6'>
+		<div class='w-75 mx-auto'>
+			<p class='fs-1'>Add Attachment</p>
+			{{#if errorAddAttachment}}
+			<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+				<strong>Error!</strong>
+				{{errorAddAttachment}}
+				<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+			</div>
+			{{/if}}
+			<form action='/projects/{{projectId}}/add-attachment' method='post' enctype="multipart/form-data">
+				<div class='form-floating mb-3'>
+					<input type='file' class='form-control' name='file' id='floatingInput' placeholder='Attachment'>
+					<label for='floatingInput'>Attachment</label>
+				</div>
+				<button type='submit' class='btn btn-info mt-3'>Add attachment</button>
+			</form>
+		</div>
+	</div>
+</div>
